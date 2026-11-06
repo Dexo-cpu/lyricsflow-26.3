@@ -16,7 +16,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
-import net.minecraft.Util;
+
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -88,7 +88,7 @@ public final class LyricsFlowMod implements ClientModInitializer {
         if (!config.enabled || mc.level == null || mc.options.hideGui) return;
         if (mc.screen instanceof ConfigScreen) return; // the settings screen draws its own preview
         Gfx g = new Gfx(ex);
-        long now = Util.getMillis();
+     long now = System.nanoTime() / 1_000_000L;
         Snapshot s = service.snapshot();
         if (config.mode == LyricsConfig.DisplayMode.HUD) {
             hud.render(g, s, 0, 0, mc.getWindow().getGuiScaledWidth(), mc.getWindow().getGuiScaledHeight(), now);
