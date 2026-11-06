@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "lyricsflow26",
+  "version": "${version}",
+  "name": "LyricsFlow 26.3",
+  "description": "Live synced Spotify lyrics on your HUD or floating in the world, with deep customization.",
+  "authors": ["LyricsFlow26 contributors"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.lyricsflow26.LyricsFlowMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
